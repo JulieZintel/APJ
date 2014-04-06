@@ -24,8 +24,7 @@ public class Message : MonoBehaviour {
 		{
 			Instantiate (exp, transform.position, Quaternion.identity);
 			Destroy(gameObject);
-			score += 20;
-			// A funtion which makes the glowstick dissapear when it hits, while it also adds twenty point to the final score. 
+			score += 20; // A function which makes the message dissapear when it is hit  by the fisherman. It also adds twenty points to the final score. 
 		}
 	}
 	void OnGUI(){
