@@ -21,8 +21,7 @@ public class Shark : MonoBehaviour {
 			{
 				Instantiate (exp, transform.position, Quaternion.identity);
 				Destroy(gameObject);
-				score -= 10;
-				// A funtion which makes the glowstick dissapear when it hits, while it also adds one point to the final score. 
+				score -= 10; // A function which makes the shark dissapear when it is hit by the fisherman. It also subtracts 10 points from the final score. 
 			}
 		}
 		void OnGUI(){
