@@ -23,7 +23,7 @@ void OnCollisionEnter(Collision other){
 		Instantiate (exp, transform.position, Quaternion.identity);
 		Destroy(gameObject);
 			score += 10;
-		// A funtion which makes the glowstick dissapear when it hits, while it also adds one point to the final score. 
+		// A function which makes the glowstick dissapear when it hits, while it also adds one point to the final score. 
 	}
 }
 void OnGUI(){
