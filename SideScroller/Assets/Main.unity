@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31dce2b63e2f04ef3a2c517d13e69a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: {fileID: 400000, guid: 5692846c5ce8f4ee08ef64bec4aad0bd, type: 2}
+  exp: {fileID: 0}
 --- !u!212 &927215826
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -675,8 +675,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7780f2b4880e4876b8129fabee48091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  exp: {fileID: 400000, guid: 6344c0ee43946429a943791deb1823a9, type: 2}
+  speed: 10
+  exp: {fileID: 0}
+  jumpVelocity: {x: 0, y: 0, z: 0}
 --- !u!50 &1277936495
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -721,7 +722,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439b2dfda630b4857b17896bf73b6a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: {fileID: 400000, guid: 5692846c5ce8f4ee08ef64bec4aad0bd, type: 2}
 --- !u!212 &1423919538
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1093,6 +1093,7 @@ GameObject:
   - 212: {fileID: 1866811647}
   - 114: {fileID: 1866811646}
   - 50: {fileID: 1866811649}
+  - 61: {fileID: 1866811650}
   m_Layer: 0
   m_Name: Shark
   m_TagString: Untagged
@@ -1111,7 +1112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea32a09e1f4e24efc989a4f6812a3527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: {fileID: 400000, guid: a28540d6bcf674c1bb3dd7af7de640fc, type: 2}
 --- !u!212 &1866811647
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1161,3 +1161,14 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!61 &1866811650
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1866811645}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 47.5200005, y: 17.6400013}
+  m_Center: {x: 0, y: 0}

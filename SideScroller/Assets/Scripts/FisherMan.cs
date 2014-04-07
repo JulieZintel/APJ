@@ -19,11 +19,11 @@ public class FisherMan : MonoBehaviour {
 
 		// Making movements options for my avatar - A for left, D for right, space for jump and S for duck and W for wide
 
-		if(touchingPlatform && Input.GetButtonDown("Jump")){
+		/*if(touchingPlatform && Input.GetButtonDown("Jump")){
 			rigidbody.AddForce(jumpVelocity, ForceMode.VelocityChange);
 		}
 		distanceTraveled = transform.localPosition.x;
-	/*			if(Input.GetKeyDown(KeyCode.A)){
+				if(Input.GetKeyDown(KeyCode.A)){
 				rigidbody.AddForce(100.0f, 0, 0);
 		}
 		if(Input.GetKeyDown(KeyCode.Space)){
@@ -32,7 +32,7 @@ public class FisherMan : MonoBehaviour {
 
 	}
 
-	/*	void OnCollisionEnter(Collision other){
+		void OnCollisionEnter(Collision other){
 		if (other.gameObject.name == "Shark"){
 
 			score = score - 10;
@@ -45,5 +45,5 @@ public class FisherMan : MonoBehaviour {
 			Instantiate (exp, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}
-	}*/
+	}
 }

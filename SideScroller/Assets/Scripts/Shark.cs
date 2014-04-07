@@ -4,8 +4,8 @@ using System.Collections;
 public class Shark : MonoBehaviour {
 	
 		public static float score = 0f;
-	public static float speed;
-		public Transform exp;
+		public static float speed;
+		//public Transform exp;
 
 		// Use this for initialization
 		void Start () {
@@ -17,10 +17,10 @@ public class Shark : MonoBehaviour {
 		void Update () {
 
 		}
-		void OnCollisionEnter(Collision other){
+		void OnCollisionEnter2D(Collision2D other){
 			if(other.gameObject.name == "FisherMan")
 			{
-				Instantiate (exp, transform.position, Quaternion.identity);
+				//Instantiate (exp, transform.position, Quaternion.identity);
 				Destroy(gameObject);
 				score -= 10; // A function which makes the shark dissapear when it is hit by the fisherman. It also subtracts 10 points from the final score. 
 			}
