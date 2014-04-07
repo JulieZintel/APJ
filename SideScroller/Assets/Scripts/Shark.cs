@@ -16,17 +16,21 @@ public class Shark : MonoBehaviour {
 
 		void Update () {
 
+			
+
 		}
+
 		void OnCollisionEnter2D(Collision2D other){
-			if(other.gameObject.name == "FisherMan")
+			if(other.gameObject.name == "FisherMan") // If the shark and fisherman collide
 			{
 				//Instantiate (exp, transform.position, Quaternion.identity);
-				Destroy(gameObject);
-				score -= 10; // A function which makes the shark dissapear when it is hit by the fisherman. It also subtracts 10 points from the final score. 
+				Destroy(other.gameObject); // The shark disappears.
+				score -= 10; // 10 points are subtracted from the final score. 
 			}
 		}
-		void OnGUI(){
-			// Creates one with game over and the player's score:
-			GUI.Box(new Rect(100,100,100,100), "Score:" + score);
-		}
+		
+		/*void OnGUI(){
+			GUI.Box(new Rect(100,100,100,100), "Score:" + score); // The player's score.
+		}*/
+	
 	}
