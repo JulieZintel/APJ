@@ -5,8 +5,7 @@ public class Message : MonoBehaviour {
 
 	public static float score = 0f;
 	public Transform exp;
-	[HideInInspector]
-	public bool grounded;
+	public static float speed;
 
 	// Use this for initialization
 	void Start () {

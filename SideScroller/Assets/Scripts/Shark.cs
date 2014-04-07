@@ -4,6 +4,7 @@ using System.Collections;
 public class Shark : MonoBehaviour {
 	
 		public static float score = 0f;
+	public static float speed;
 		public Transform exp;
 
 		// Use this for initialization

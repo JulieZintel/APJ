@@ -4,7 +4,9 @@ using System.Collections;
 public class Fish : MonoBehaviour {
 
 public static float score = 0f;
+public static float speed;
 public Transform exp;
+
 
 	// Use this for initialization
 	void Start () {
