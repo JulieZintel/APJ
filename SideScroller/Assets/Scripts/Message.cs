@@ -4,7 +4,7 @@ using System.Collections;
 public class Message : MonoBehaviour {
 
 	public static float score = 0f;
-	public Transform exp;
+	//public Transform exp;
 	public static float speed;
 
 	// Use this for initialization
@@ -21,7 +21,7 @@ public class Message : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
 		if(other.gameObject.name == "FisherMan")
 		{
-			Instantiate (exp, transform.position, Quaternion.identity);
+			//Instantiate (exp, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 			score += 20; // A function which makes the message dissapear when it is hit  by the fisherman. It also adds twenty points to the final score. 
 		}
