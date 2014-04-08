@@ -532,6 +532,7 @@ GameObject:
   - 124: {fileID: 1038366453}
   - 81: {fileID: 1038366452}
   - 114: {fileID: 1038366458}
+  - 114: {fileID: 1038366457}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -600,13 +601,34 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1277936493}
---- !u!114 &1038366458
+--- !u!114 &1038366457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038366451}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b167d00b3108411a8a963cba5ddde1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 0}
+  distance: 7
+  height: 3
+  angularSmoothLag: .300000012
+  angularMaxSpeed: 15
+  heightSmoothLag: .300000012
+  snapSmoothLag: .200000003
+  snapMaxSpeed: 720
+  clampHeadPositionScreenSpace: .75
+  lockCameraTimeout: .200000003
+--- !u!114 &1038366458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1038366451}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb4d2ea43577b403d9e29def7c08733a, type: 3}
   m_Name: 
@@ -620,11 +642,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 1277936493}
   - 212: {fileID: 1277936492}
-  - 114: {fileID: 1277936494}
-  - 50: {fileID: 1277936495}
+  - 114: {fileID: 1277936496}
+  - 143: {fileID: 1277936494}
   m_Layer: 0
   m_Name: FisherMan
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -664,7 +686,21 @@ Transform:
   m_Children:
   - {fileID: 1038366456}
   m_Father: {fileID: 0}
---- !u!114 &1277936494
+--- !u!143 &1277936494
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1277936491}
+  serializedVersion: 2
+  m_Height: 9.96000004
+  m_Radius: 5.03999996
+  m_SlopeLimit: 45
+  m_StepOffset: .300000012
+  m_SkinWidth: .0799999982
+  m_MinMoveDistance: 10
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1277936496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -672,26 +708,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1277936491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7780f2b4880e4876b8129fabee48091, type: 3}
+  m_Script: {fileID: 11500000, guid: 239cc958903064fa89da6088ffff98e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  exp: {fileID: 400000, guid: 6344c0ee43946429a943791deb1823a9, type: 2}
---- !u!50 &1277936495
-Rigidbody2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1277936491}
-  m_Mass: 1
-  m_LinearDrag: 10
-  m_AngularDrag: .0500000007
-  m_GravityScale: 0
-  m_FixedAngle: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  f_speed: 10
+  f_jumpSpeed: 20
+  f_gravity: 0
 --- !u!1 &1423919536
 GameObject:
   m_ObjectHideFlags: 0
