@@ -17,18 +17,22 @@ public class FisherMan : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update ()
-	{
+	{	// Should keep the Hero to ground, so the gravity is attached to the scene and Fisherman not falls out(?)
 		//grounded = Physics2D.Linecast (transform.position, groundDetector.position, 1 << LayerMask.NameToLayer ("Terrain"));  
 
+		//Moving Hero forward with a speed of 5 floats
 		if (Input.GetKeyDown (KeyCode.D)) {
 			rigidbody2D.velocity = new Vector2 (5.0f, 0);
 		}
+		//Moving Hero backwards with a speed of 5 floats
 		if (Input.GetKeyDown (KeyCode.A)) {
 			rigidbody2D.velocity = new Vector2 (-5.0f, 0);
 		}
+		//Moving Hero forward with a extra speed of 10 floats
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			rigidbody2D.velocity = new Vector2 (10.0f, 0);
 		}
+		//SHOULD move Hero upwards with a height of 5 floats
 		if (Input.GetKeyDown (KeyCode.W) && grounded) {
 			//rigidbody2D.velocity = new Vector2 (0, 5.0f);
 			jump = true;
