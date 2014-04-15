@@ -49,7 +49,28 @@ public class FisherMan : MonoBehaviour {
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 			jump = false;
 		}
-	}		
+	}
 
+	void OnCollisionEnter2D(Collision2D other){
+		if(other.gameObject.name == "Fish") // If the fish and fisherman collide
+		{
+			Destroy(other.gameObject); // Destroys the fish.
+			score += 1; // 1 point is added to the score.
+		}
+		else if(other.gameObject.name == "Message") // If the message and fisherman collide
+		{
+			Destroy(other.gameObject); // Destroys the message.
+			score += 1; // 1 point is added to the score.
+		}
+		
+		else if(other.gameObject.name == "Shark") // If the shark and fisherman collide
+		{
+			Destroy(other.gameObject); // Destroys the shark.
+			score -= 5; // 5 points are subtracted from the score.
+		}
+	}
+	
+	void OnGUI(){
+		GUI.Box(new Rect(10,10,100,20), "Score:" + score); // Displays the score in the corner.
+	}
 }
-
