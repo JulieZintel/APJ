@@ -337,7 +337,6 @@ GameObject:
   - 124: {fileID: 1038366453}
   - 81: {fileID: 1038366452}
   - 114: {fileID: 1038366458}
-  - 114: {fileID: 1038366457}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -406,42 +405,13 @@ Transform:
   m_LocalScale: {x: .849460423, y: .849461079, z: 1}
   m_Children: []
   m_Father: {fileID: 1524227618}
---- !u!114 &1038366457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1038366451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b167d00b3108411a8a963cba5ddde1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 0}
-  _target: {fileID: 0}
-  distance: 7
-  height: 3
-  angularSmoothLag: .300000012
-  angularMaxSpeed: 15
-  heightSmoothLag: .300000012
-  snapSmoothLag: .200000003
-  snapMaxSpeed: 720
-  clampHeadPositionScreenSpace: .75
-  lockCameraTimeout: .200000003
-  headOffset: {x: 0, y: 0, z: 0}
-  centerOffset: {x: 0, y: 0, z: 0}
-  heightVelocity: 0
-  angleVelocity: 0
-  snap: 0
-  controller: {fileID: 0}
-  targetHeight: 100000
 --- !u!114 &1038366458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038366451}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb4d2ea43577b403d9e29def7c08733a, type: 3}
   m_Name: 
@@ -847,6 +817,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d809691b14b445baa5677ea7dbb7a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  exp: {fileID: 0}
+  jump: 0
+  jumpForce: 10
 --- !u!50 &1524227620
 Rigidbody2D:
   m_ObjectHideFlags: 0
