@@ -405,6 +405,20 @@ Transform:
   m_LocalScale: {x: .849460423, y: .849461079, z: 1}
   m_Children: []
   m_Father: {fileID: 1524227618}
+<<<<<<< HEAD
+=======
+--- !u!114 &1038366457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1038366451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b167d00b3108411a8a963cba5ddde1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> FETCH_HEAD
 --- !u!114 &1038366458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,7 +755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31dce2b63e2f04ef3a2c517d13e69a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: {fileID: 0}
 --- !u!212 &1473852424
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -787,6 +800,7 @@ GameObject:
   - 212: {fileID: 1524227621}
   - 50: {fileID: 1524227620}
   - 114: {fileID: 1524227619}
+  - 61: {fileID: 1524227622}
   m_Layer: 0
   m_Name: FisherMan
   m_TagString: Player
@@ -859,6 +873,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: 13e6745763bf4433e8c5639c43eda689, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1524227622
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1524227617}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 10.079999, y: 9.96000004}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1789109028
 GameObject:
   m_ObjectHideFlags: 0
