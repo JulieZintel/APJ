@@ -98,11 +98,6 @@ if (isGrounded && Input.GetKey (KeyCode.W)) {
 transform.rigidbody2D.velocity = new Vector2 (speed, Jump);
 }
 
-}
-=======
-	}
->>>>>>> FETCH_HEAD
-
 	void OnCollisionEnter2D(Collision2D other){
 		if(other.gameObject.name == "Fish") // If the fish and fisherman collide
 		{
