@@ -2,16 +2,10 @@
 using System.Collections;
 
 public class FisherMan : MonoBehaviour {
-	private GameObject cameraRef;
+	private GameObject cameraRef; // The camera that's controlling the gameplay
+	public static float score = 0; // The score system
 	public float speed = 0.0f; // The speed of the hero, when it moves in the plane
-	public static float score = 0;
-	public Transform exp;
-	private bool direction_right;
-	private bool direction_left;
-	private bool boost;
 
-	private float boosttimer;
-	public float boosttime = 5.0f;
 	public float Jump = 0.0f;
 	public bool isGrounded = true;
 	public double ground_y = -1.136831;
@@ -19,7 +13,6 @@ public class FisherMan : MonoBehaviour {
 	void Start () {
 		cameraRef = GameObject.Find("MainCamera");
 
-		boosttimer = boosttime;
 		if (transform.position.y < ground_y && !isGrounded) {
 			isGrounded = true;
 		}
@@ -28,42 +21,54 @@ public class FisherMan : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		// Tracks The Fisherman on only the x-axis, so the player can see if the Fisherman is hitting any obstacles
 		cameraRef.transform.position = new Vector3(transform.position.x+5f, 1.6f, -10f);
 
+		// Speed forwards when D is pressed, speed is increased when D is pressed multiple times
 		if (Input.GetKeyDown (KeyCode.D) && speed <15.0f) {
-
 			speed += 1.0f;
 		}
-		if (Input.GetKeyDown (KeyCode.A) && speed < -15.0f) {
 
+		// Speed backwards when A is pressed, speed is increased when D is pressed multiple times
+		if (Input.GetKeyDown (KeyCode.A) && speed > -15.0f) {
 			speed -= 1.0f;
 		}
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			boost = true;
-		}
-		if (boost == true && boosttimer > 0.0f) {
-			boosttimer -= 0.5f;
-		} else {
-			boost = false;
-			boosttimer = boosttime;
+
+		// The speed will have a speedboost as soon Space is pressed
+		if (Input.GetKeyDown (KeyCode.Space)) { 
+			if (speed < 0.0f) {
+				speed -= 5.0f;
+			}
+			if (speed > 0.5f) {
+				speed += 5.0f;
+			}}
+		// The speed will drop, so it's not the same speed all the time
+		if (speed < 0.0f) {
+			speed += 0.05f;
+		}else if (speed > 0.0f) {
+			speed -= 0.05f;
 		}
 
-if (isGrounded && Input.GetKey (KeyCode.W)) {
-	isGrounded = false;
+		// The Hero can jump to avoid any obstacles by pressing W
+		if (isGrounded && Input.GetKey (KeyCode.W)) {
+			isGrounded = false;
 			Jump = 20.0f;
 
+		// When Hero jump he needs to fall down again, by the gravity
 		} else if (transform.position.y > ground_y && Jump > -20.0f  ) {
 			Jump -= 0.5f;	
-	transform.rigidbody2D.velocity = new Vector2 (speed, Jump);	
+		transform.rigidbody2D.velocity = new Vector2 (speed, Jump);	
 
-} else if (transform.position.y <= ground_y && !isGrounded){
-	Jump = 0.0f;
-	transform.rigidbody2D.velocity = new Vector2 (speed, Jump);
-	isGrounded = true;
-}
-transform.rigidbody2D.velocity = new Vector2 (speed, Jump);
-}
+		//When Hero is in the air jumping, the hero cannot jump again, before it's down at the ground.
+		} else if (transform.position.y <= ground_y && !isGrounded){
+			Jump = 0.0f;
+			transform.rigidbody2D.velocity = new Vector2 (speed, Jump);
+			isGrounded = true;
+		}
+		transform.rigidbody2D.velocity = new Vector2 (speed, Jump);
+		}
 
+	// Function to the Scoresystem when Hero hits an obstacle
 	void OnCollisionEnter2D(Collision2D other){
 		if(other.gameObject.name == "Fish") // If the fish and fisherman collide
 		{

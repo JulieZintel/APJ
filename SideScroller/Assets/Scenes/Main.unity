@@ -805,7 +805,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  exp: {fileID: 0}
   boosttime: 5
   Jump: 0
   isGrounded: 1
