@@ -3,12 +3,12 @@ using System.Collections;
 
 public class FisherMan : MonoBehaviour {
 	private GameObject cameraRef; // The camera that's controlling the gameplay
-	public static float score = 0; // The score system
-	public float speed = 0.0f; // The speed of the hero, when it moves in the plane
+	private static float score = 0; // The score system
+	private float speed = 0.0f; // The speed of the hero, when it moves in the plane
 
-	public float Jump = 0.0f;
-	public bool isGrounded = true;
-	public double ground_y = -1.136831;
+	private float Jump = 0.0f;
+	private bool isGrounded = true;
+	private double ground_y = -1.136831;
 
 	void Start () {
 		cameraRef = GameObject.Find("MainCamera");
