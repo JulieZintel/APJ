@@ -9,6 +9,7 @@ public class FisherMan : MonoBehaviour {
 	private float Jump = 0.0f;
 	private bool isGrounded = true;
 	private double ground_y = -1.136831;
+	private bool endGame = false;
 
 	void Start () {
 		cameraRef = GameObject.Find("MainCamera");
@@ -29,6 +30,7 @@ public class FisherMan : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.D) && speed <15.0f) {
 			speed += 1.0f;
 		}
+
 
 		// Speed backwards when A is pressed, speed is increased when D is pressed multiple times
 		if (Input.GetKeyDown (KeyCode.A) && speed > -15.0f) {
@@ -87,9 +89,18 @@ public class FisherMan : MonoBehaviour {
 			Destroy(other.gameObject); // Destroys the shark.
 			score -= 5; // 5 points are subtracted from the score.
 		}
+		else if(other.gameObject.name == "Seashore") // If the shark and fisherman collide
+		{
+			endGame = true;
+		}
 	}
 	
 	void OnGUI(){
-		GUI.Box(new Rect(10,10,100,20), "Score:" + score); // Displays the score in the corner.
+		if (endGame == true){
+			GUI.Box(new Rect(10,10,1350,600), "The game is over. Your final score is " + score + "."); // Displays the score in the corner.
+		}
+		else {
+			GUI.Box(new Rect(10,10,100,20), "Score:" + score); // Displays the score in the corner.
+		}
 	}
 }
