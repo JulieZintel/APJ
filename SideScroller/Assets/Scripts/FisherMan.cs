@@ -21,6 +21,7 @@ public class FisherMan : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+
 		// Tracks The Fisherman on only the x-axis, so the player can see if the Fisherman is hitting any obstacles
 		cameraRef.transform.position = new Vector3(transform.position.x+5f, 1.6f, -10f);
 
