@@ -10,6 +10,7 @@ public class FisherMan : MonoBehaviour {
 	private bool isGrounded = true;
 	private double ground_y = -1.136831;
 	private bool endGame = false;
+	private float endGameScore;
 
 	void Start () {
 		cameraRef = GameObject.Find("MainCamera");
@@ -71,36 +72,38 @@ public class FisherMan : MonoBehaviour {
 		transform.rigidbody2D.velocity = new Vector2 (speed, Jump);
 		}
 
-	// Function to the Scoresystem when Hero hits an obstacle
+	// Function which notices if the fisherman collides with a game object.
 	void OnCollisionEnter2D(Collision2D other){
-		if(other.gameObject.name == "Fish") // If the fish and fisherman collide
+		if(other.gameObject.name == "Fish") // If the fish and fisherman collide.
 		{
 			Destroy(other.gameObject); // Destroys the fish.
-			score += 1; // 1 point is added to the score.
+			score += 1; // 1 point is added to the player's score.
 		}
-		else if(other.gameObject.name == "Message") // If the message and fisherman collide
+		else if(other.gameObject.name == "Message") // If the message and fisherman collide.
 		{
 			Destroy(other.gameObject); // Destroys the message.
-			score += 1; // 1 point is added to the score.
+			score += 1; // 1 point is added to the player's score.
 		}
 		
-		else if(other.gameObject.name == "Shark") // If the shark and fisherman collide
+		else if(other.gameObject.name == "Shark") // If the shark and fisherman collide.
 		{
 			Destroy(other.gameObject); // Destroys the shark.
-			score -= 5; // 5 points are subtracted from the score.
+			score -= 5; // 5 points are subtracted from the player's score.
 		}
-		else if(other.gameObject.name == "Seashore") // If the shark and fisherman collide
+		else if(other.gameObject.name == "Seashore") // If the seashore and fisherman collide. 
 		{
-			endGame = true;
+			endGameScore = score; // Makes sure that the player cannot gain anymore points as the game is over.
+			endGame = true; // endGame is set to true.
 		}
 	}
-	
+
+	// Function which is used to display a GUI with the user's score and when the game is over.
 	void OnGUI(){
 		if (endGame == true){
-			GUI.Box(new Rect(10,10,1350,600), "The game is over. Your final score is " + score + "."); // Displays the score in the corner.
+			GUI.Box(new Rect(10,10,1350,600), "The game is over. Your final score is " + endGameScore + "."); // Displays the player's final score.
 		}
 		else {
-			GUI.Box(new Rect(10,10,100,20), "Score:" + score); // Displays the score in the corner.
+			GUI.Box(new Rect(10,10,100,20), "Score:" + score); // Displays the score in the corner, while the game is still going.
 		}
 	}
 }
