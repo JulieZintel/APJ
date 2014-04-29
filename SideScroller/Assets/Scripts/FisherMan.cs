@@ -100,10 +100,21 @@ public class FisherMan : MonoBehaviour {
 	// Function which is used to display a GUI with the user's score and when the game is over.
 	void OnGUI(){
 		if (endGame == true){
+			Application.LoadLevel( "endScene");
 			GUI.Box(new Rect(10,10,1350,600), "The game is over. Your final score is " + endGameScore + "."); // Displays the player's final score.
 		}
 		else {
 			GUI.Box(new Rect(10,10,100,20), "Score:" + score); // Displays the score in the corner, while the game is still going.
+		}
+	}
+
+	//here i make the game to end when the boat hits the shore and the final scene “ end scene” is displayed
+
+	void OnTriggerEnter2D(Collider2D other){
+
+		if (other.gameObject.tag == "Shore") {
+			Application.LoadLevel ("EndScene");
+
 		}
 	}
 }
