@@ -9,8 +9,6 @@ public class FisherMan : MonoBehaviour {
 	private float Jump = 0.0f;
 	private bool isGrounded = true;
 	private double ground_y = -1.136831;
-	private bool endGame = false;
-	private float endGameScore;
 
 	void Start () {
 		cameraRef = GameObject.Find("MainCamera");
@@ -90,20 +88,20 @@ public class FisherMan : MonoBehaviour {
 			Destroy(other.gameObject); // Destroys the shark.
 			score -= 5; // 5 points are subtracted from the player's score.
 		}
-		else if(other.gameObject.name == "Seashore") // If the seashore and fisherman collide. 
-		{
-			endGameScore = score; // Makes sure that the player cannot gain anymore points as the game is over.
-			endGame = true; // endGame is set to true.
-		}
 	}
 
-	// Function which is used to display a GUI with the user's score and when the game is over.
+	// Function which displays a GUI with the user's score.
 	void OnGUI(){
-		if (endGame == true){
-			GUI.Box(new Rect(10,10,1350,600), "The game is over. Your final score is " + endGameScore + "."); // Displays the player's final score.
-		}
-		else {
 			GUI.Box(new Rect(10,10,100,20), "Score:" + score); // Displays the score in the corner, while the game is still going.
+	}
+
+	//here i make the game to end when the boat hits the shore and the final scene “ end scene” is displayed
+
+	void OnTriggerEnter2D(Collider2D other){
+
+		if (other.gameObject.tag == "Shore") {
+			Application.LoadLevel ("EndScene");
+
 		}
 	}
 }
