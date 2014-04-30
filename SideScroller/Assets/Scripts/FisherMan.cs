@@ -94,15 +94,4 @@ public class FisherMan : MonoBehaviour {
 	void OnGUI(){
 			GUI.Box(new Rect(10,10,100,20), "Score:" + score); // Displays the score in the corner, while the game is still going.
 	}
-
-	//here i make the game to end when the boat hits the shore and the final scene “ end scene” is displayed
-
-	void OnTriggerEnter2D(Collider2D other){
-
-		if (other.gameObject.tag == "Shore") {
-			Debug.Log ("asdfghjk");
-			Application.LoadLevel ("EndScene");
-
-		}
-	}
 }
