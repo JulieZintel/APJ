@@ -6144,6 +6144,7 @@ GameObject:
   - 4: {fileID: 1575259259}
   - 212: {fileID: 1575259258}
   - 61: {fileID: 1575259257}
+  - 114: {fileID: 1575259260}
   m_Layer: 0
   m_Name: Seashore
   m_TagString: Untagged
@@ -6159,7 +6160,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1575259256}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 5.13000011, y: 8.65999985}
   m_Center: {x: 0, y: 0}
 --- !u!212 &1575259258
@@ -6196,6 +6197,17 @@ Transform:
   m_LocalScale: {x: 3.93163729, y: 3.93163729, z: 4.39966345}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1575259260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1575259256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf0e8d30dd7748d4827d39b0ff37205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1576536567
 GameObject:
   m_ObjectHideFlags: 0
