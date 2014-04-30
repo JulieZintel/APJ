@@ -100,6 +100,7 @@ public class FisherMan : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 
 		if (other.gameObject.tag == "Shore") {
+			Debug.Log ("asdfghjk");
 			Application.LoadLevel ("EndScene");
 
 		}
